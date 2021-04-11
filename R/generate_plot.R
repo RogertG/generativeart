@@ -21,7 +21,7 @@ generate_plot <- function(df, file_name, polar, filetype, color = "black", backg
   if (polar == TRUE) {
     plot <- df %>%
       ggplot2::ggplot(ggplot2::aes(x = x, y = y)) +
-      ggplot2::geom_point(alpha = 0.1, size = 0, shape = 20, color = color) +
+      ggplot2::geom_point(alpha = 0.3, size = 0, shape = 20, color = color) +
       ggplot2::theme_void() +
       ggplot2::coord_fixed() +
       ggplot2::coord_polar() +
@@ -32,7 +32,7 @@ generate_plot <- function(df, file_name, polar, filetype, color = "black", backg
   } else {
     plot <- df %>%
       ggplot2::ggplot(ggplot2::aes(x = x, y = y)) +
-      ggplot2::geom_point(alpha = 0.1, size = 0, shape = 20, color = color) +
+      ggplot2::geom_point(alpha = 0.3, size = 0, shape = 20, color = color) +
       ggplot2::theme_void() +
       ggplot2::coord_fixed() +
       ggplot2::theme(
@@ -40,6 +40,6 @@ generate_plot <- function(df, file_name, polar, filetype, color = "black", backg
         plot.background = element_rect(fill = background_color)
         )
   }
-  ggplot2::ggsave(plot, filename = paste0(IMG_PATH, file_name), width = 18, height = 18, device = filetype)
+  ggplot2::ggsave(plot, filename = paste0(IMG_PATH, file_name), width = 15, height = 15, device = filetype)
   print("image saved...")
 }
